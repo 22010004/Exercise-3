@@ -1,0 +1,62 @@
+#include <iostream>
+#include <string>
+
+int main() {
+    // Declare variables to store user inputs
+    int age;
+    std::string interests;
+    std::string personality;
+
+    // Greet the user and explain the program
+    std::cout << "Welcome to the Partner Selector!\n";
+    std::cout << "Please answer a few questions to help us find a suitable partner for you.\n";
+
+    // Get user's age
+    std::cout << "Enter your age: ";
+    std::cin >> age;
+
+    // Get user's interests
+    std::cout << "Enter one of your major interests (e.g., books, sports, movies, music, etc.): ";
+    std::cin >> interests;
+
+    // Get user's preferred personality trait in a partner
+    std::cout << "What key personality trait do you value most in a partner? (e.g., kindness, humor, intelligence, creativity): ";
+    std::cin >> personality;
+
+    // Nested if statements to determine partner choice
+    if (age >= 18 && age <= 25) {
+        if (interests == "books") {
+            if (personality == "intelligence") {
+                std::cout << "We recommend someone who is studious, enjoys reading, and values deep conversations.\n";
+            } else if (personality == "humor") {
+                std::cout << "We recommend someone who loves light-hearted novels and enjoys literary jokes.\n";
+            } else {
+                std::cout << "We recommend someone who loves reading across genres and shares your values.\n";
+            }
+        } else if (interests == "sports") {
+            if (personality == "kindness") {
+                std::cout << "We recommend someone who enjoys team sports and values teamwork and sportsmanship.\n";
+            } else if (personality == "humor") {
+                std::cout << "We recommend someone who enjoys playful competition and can laugh during a match.\n";
+            } else {
+                std::cout << "We recommend someone who is passionate about physical activities and enjoys an active lifestyle.\n";
+            }
+        } else {
+            std::cout << "We recommend someone who shares your interest in " << interests << " and complements your personality trait of " << personality << ".\n";
+        }
+    } else if (age > 25 && age <= 35) {
+        if (interests == "movies") {
+            if (personality == "creativity") {
+                std::cout << "We recommend someone who loves discussing films, from cinematography to storytelling.\n";
+            } else {
+                std::cout << "We recommend a movie enthusiast who matches your taste in films and shares your value of " << personality << ".\n";
+            }
+        } else {
+            std::cout << "We recommend someone who is mature, shares your interest in " << interests << ", and appreciates your most valued trait, " << personality << ".\n";
+        }
+    } else {
+        std::cout << "We recommend finding someone who is compatible with your life experience, shares similar interests in " << interests << ", and values the personality traits you find important.\n";
+    }
+
+    return 0;
+}
